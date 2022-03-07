@@ -1,0 +1,372 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "./_mixins/_background-icon"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #B7B7B7
+	opacity: 1
+
+*:-moz-placeholder
+	color: #B7B7B7
+	opacity: 1
+
+*::-moz-placeholder
+	color: #B7B7B7
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #B7B7B7
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #B7B7B7
+
+body input:required:valid,
+body textarea:required:valid
+	color: #B7B7B7
+
+html, body
+	height: 100%
+	font-size: 18px
+	line-height: 1.5
+body
+	display: flex
+	flex-direction: column
+	height: 100%
+	min-width: 320px
+	position: relative
+	font-family: $default-font
+	overflow-x: hidden
+	padding: 0
+	margin: 0
+	color: $accent
+
+p, a
+	margin: 0
+	padding: 0
+
+.h1
+	font-size: 5.3rem
+	Line-height: 1rem
+	text-transform: uppercase
+	font-weight: bold
+	font-family: $default-font
+	@media only screen and (max-width : 1190px)
+		font-size: 7.5vw
+.h2
+	font-size: 3.8rem
+.h3
+	font-size: 2.8rem
+
+.h4
+	font-size: 1.9rem
+.h5
+	font-size: 0.9rem
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent
+	color: #fff
+
+.btn
+	border: 2px solid $text
+	border-radius: 45px
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+	padding: 11px 26px 11px 26px
+	line-height: 1.1rem
+	transition: .25s all
+	color: $text
+	font-size: 1rem
+	font-weight: 600
+	width: fit-content
+	&.primary
+		border: 2px solid $second-color
+		span
+			margin-left: 11px
+			display: flex
+			svg
+				fill: $text
+		&:hover
+			text-decoration: none
+			background-color: $second-color
+			color: #fff
+			svg
+				fill: #fff
+
+
+.btnMnu
+	top: 0px
+	width: auto
+	height: auto
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	cursor: pointer
+	position: relative
+.btnRow
+	height: 2px
+	width: 38px
+	margin: 6px 0
+	background-color: #000
+	position: relative
+	-webkit-transition: all .5s
+	-o-transition: all .5s
+	transition: all .5s
+.btnMnu.active .btnRow
+	&:first-child
+		-webkit-transform: rotate(-135deg)
+		-ms-transform: rotate(-135deg)
+		-o-transform: rotate(-135deg)
+		transform: rotate(-135deg)
+		top: 10px
+	&:last-child
+		-webkit-transform: rotate(-225deg)
+		-ms-transform: rotate(-225deg)
+		-o-transform: rotate(-225deg)
+		transform: rotate(-225deg)
+		top: -17px
+	&:nth-child(2)
+		opacity: 0
+
+.callback
+	margin:
+		right: 20px
+		left: auto
+	a
+		display: flex
+		align-items: center
+		margin-right: 47px
+		@media only screen and (max-width :  1300px)
+			margin-right: 20px
+		span
+			margin-left: 18px
+			color: $text
+			white-space: nowrap
+			font-size: 1rem
+			font-family: $default-font
+			font-weight: normal
+			@media only screen and (max-width :  1300px)
+				display: none
+.logo
+	margin-right: 40px
+
+.indexPreview
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	height: 100%
+	position: relative
+	overflow: hidden
+	.leftSide
+		width: 90%
+		background-color: #90c8fa
+		height: 100vh
+		overflow: hidden
+		flex-grow: 1
+		img
+			display: block
+			max-width: 100%
+			height: 100vh
+			width: 100vw
+			object-fit: cover
+	.rightSide
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		width: 100%
+		background-color: #fff
+		height: 100vh
+		flex-grow: 1
+		position: relative
+		.rightSideTitle
+			position: relative
+			left: -100px
+			z-index: 1
+			color: $text
+			margin-top: 100px
+			margin-bottom: 57px
+		.rightSideContent
+			display: flex
+			width: auto
+			height: 100%
+			font-size: 1.1rem
+			color: $text
+			z-index: 2
+			margin:
+				left: 66px
+				right: 195px
+				bottom: 35px
+			@media only screen and (max-width :  1600px)
+				margin:
+					right: 40px
+					left: 40px
+		.rightSideNavigation
+			margin:
+				left: 66px
+				right: 195px
+				top: 10px
+				bottom: 20px
+			@media only screen and (max-width :  1600px)
+				margin:
+					right: 40px
+					left: 40px
+
+		.dvider
+			position: relative
+			display: flex
+			width: 100%
+			justify-content: flex-end
+			margin:
+				top: 10px
+				bottom: 63px
+			.redirect
+				margin-right: 153px
+				display: flex
+				a
+					z-index: 2
+					svg
+						path, circle
+							transition: .25s ease
+					&:hover
+						svg
+							path
+								fill: $text
+							circle
+								stroke: $text
+				&:after
+					content: ""
+					position: relative
+					bottom: 0
+					left: -42px
+					right: 0
+					background-color: #fff
+					border-radius: 50%
+					width: 42px
+					height: 42px
+					z-index: 1
+				&:before
+					content: ""
+					position: absolute
+					bottom: 21px
+					left: 0
+					right: 0
+					border-top: 1px solid #B7C7D1
+
+
+		.linkItems
+			display: flex
+			margin-left: 51px
+			margin-bottom: 65px
+			@media only screen and (max-width :  1600px)
+				margin:
+					right: 25px
+					left: 25px
+			.items
+				margin: 0 15px
+				> *
+					color: $text
+					&:hover
+						text-decoration: none
+				.link
+					max-width: 260px
+					max-height: 179px
+					border-radius: 10px
+					background-color: orange
+					margin-bottom: 20px
+					overflow: hidden
+					&:hover
+						img
+							transition: .5s all
+							transform: scale(1.12)
+				span
+					font-size: 1rem
+					font-weight: 600
+	.indexPreviewHeader
+		display: flex
+		justify-content: space-between
+		align-items: center
+		width: auto
+		height: 62px
+		margin:
+			top: 64px
+			left: 66px
+			right: 195px
+		@media only screen and (max-width :  1600px)
+			margin:
+				right: 40px
+				left: 40px
+.bottomLine
+	display: flex
+	.leftLine
+		width: 100%
+		background: #0D3249
+		height: 7px
+	.rightLine
+		width: 50%
+		height: 7px
+		background: #E14E3D
+		flex-shrink: 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "media" // Всегда в конце
