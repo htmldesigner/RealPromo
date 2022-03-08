@@ -145,7 +145,7 @@ p, a
 	height: 2px
 	width: 38px
 	margin: 6px 0
-	background-color: #000
+	background-color: $text
 	position: relative
 	-webkit-transition: all .5s
 	-o-transition: all .5s
@@ -195,7 +195,9 @@ p, a
 	justify-content: space-between
 	width: 100%
 	z-index: 10
-	display: flex
+	display: none
+	&.active
+		display: flex
 	.menuOverlay
 		width: 90%
 		background: rgba(0,0,0, 0.4)
@@ -229,11 +231,9 @@ p, a
 						text-decoration: none
 
 
-
-
-
-
-
+.header
+	height: 46px
+	display: none
 
 .indexPreview
 	display: flex
@@ -249,11 +249,12 @@ p, a
 		overflow: hidden
 		flex-grow: 1
 		img
-			display: block
 			max-width: 100%
 			height: 100vh
 			width: 100vw
 			object-fit: cover
+		.mobDisplay
+			display: none
 	.rightSide
 		display: flex
 		flex-direction: column

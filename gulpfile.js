@@ -32,7 +32,7 @@ gulp.task('sass', function() {
 		// grid: true, // Optional. Enable CSS Grid
 		overrideBrowserslist: ['last 1 versions']
 	}))
-	.pipe(cleanCSS()) // Закомментировать, если без сжатия
+	// .pipe(cleanCSS()) // Закомментировать, если без сжатия
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream())
 });
