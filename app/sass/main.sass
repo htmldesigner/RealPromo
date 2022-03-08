@@ -48,6 +48,7 @@ body
 	min-width: 320px
 	position: relative
 	font-family: $default-font
+	font-weight: 400
 	overflow-x: hidden
 	padding: 0
 	margin: 0
@@ -59,12 +60,18 @@ p, a
 
 .h1
 	font-size: 5.3rem
-	Line-height: 1rem
+	Line-height: 1
 	text-transform: uppercase
-	font-weight: bold
-	font-family: $default-font
+	font-style: normal
+	font-family: $font-semibold
 	@media only screen and (max-width : 1190px)
-		font-size: 7.5vw
+		font-size: 7.9vw
+	@media only screen and (max-width : $lg)
+		font-size: 5.9vw
+	@media only screen and (max-width : $md)
+		font-size: 5.9vw
+	@media only screen and (max-width : $sm)
+		font-size:  24px
 .h2
 	font-size: 3.8rem
 .h3
@@ -101,11 +108,19 @@ p, a
 	font-size: 1rem
 	font-weight: 600
 	width: fit-content
+	font-family: $font-bold
+	@media only screen and (max-width :  $sm)
+		font-size: .68rem
+		padding: 8px 23px 8px 24px
 	&.primary
 		border: 2px solid $second-color
+		@media only screen and (max-width :  $sm)
+			border: 1px solid $second-color
 		span
 			margin-left: 11px
 			display: flex
+			@media only screen and (max-width :  $sm)
+				width: 12px
 			svg
 				fill: $text
 		&:hover
@@ -114,7 +129,6 @@ p, a
 			color: #fff
 			svg
 				fill: #fff
-
 
 .btnMnu
 	top: 0px
@@ -126,6 +140,7 @@ p, a
 	justify-content: center
 	cursor: pointer
 	position: relative
+	z-index: 99
 .btnRow
 	height: 2px
 	width: 38px
@@ -135,6 +150,8 @@ p, a
 	-webkit-transition: all .5s
 	-o-transition: all .5s
 	transition: all .5s
+.btnMnu.active .btnRow
+	background-color: #fff
 .btnMnu.active .btnRow
 	&:first-child
 		-webkit-transform: rotate(-135deg)
@@ -173,6 +190,51 @@ p, a
 .logo
 	margin-right: 40px
 
+.menu
+	position: absolute
+	justify-content: space-between
+	width: 100%
+	z-index: 10
+	display: flex
+	.menuOverlay
+		width: 90%
+		background: rgba(0,0,0, 0.4)
+		transition: all 500ms ease-in
+		opacity: 0
+		&.isActive
+			transition: all 300ms ease-in
+			opacity: 1
+	.menuContainer
+		background-color: $accent
+		width: 100%
+		height: 100vh
+		transition: all 200ms ease-in
+		transform: translateX(1300px)
+		&.isActive
+			transition: all 200ms ease-in
+			transform: translateX(0px)
+		ul
+			margin: 242px 0 0 257px
+			padding: 0
+			li
+				list-style: none
+				margin-top: 50px
+				margin-bottom: 50px
+				a
+					color: #ACBCCD
+					transition: .25s ease
+					font-size: 1.22rem
+					&:hover
+						color: #fff
+						text-decoration: none
+
+
+
+
+
+
+
+
 .indexPreview
 	display: flex
 	flex-direction: row
@@ -201,47 +263,45 @@ p, a
 		height: 100vh
 		flex-grow: 1
 		position: relative
+		.indexPreviewHeader
+			display: flex
+			justify-content: space-between
+			align-items: center
+			width: auto
+			height: 62px
+			margin:
+				top: 59px
+				left: 66px
+				right: 195px
+				bottom: 10px
 		.rightSideTitle
 			position: relative
-			left: -100px
-			z-index: 1
+			left: -99px
 			color: $text
-			margin-top: 100px
-			margin-bottom: 57px
 		.rightSideContent
 			display: flex
-			width: auto
-			height: 100%
 			font-size: 1.1rem
 			color: $text
-			z-index: 2
-			margin:
-				left: 66px
-				right: 195px
-				bottom: 35px
-			@media only screen and (max-width :  1600px)
-				margin:
-					right: 40px
-					left: 40px
-		.rightSideNavigation
-			margin:
-				left: 66px
-				right: 195px
-				top: 10px
-				bottom: 20px
-			@media only screen and (max-width :  1600px)
-				margin:
-					right: 40px
-					left: 40px
+			margin-left: 66px
+			margin-right: 195px
+			margin-bottom: 5px
+			.rightSideDescription
+				min-height: 85px
+				@media only screen and (max-width : $md)
+					font-size: 1.1rem
+					line-height: 1.4rem
+				@media only screen and (max-width : $sm)
+					font-size:  1rem
+					line-height: 1.2rem
 
+		.rightSideNavigation
+			position: relative
+			margin-left: 66px
 		.dvider
 			position: relative
 			display: flex
 			width: 100%
 			justify-content: flex-end
-			margin:
-				top: 10px
-				bottom: 63px
 			.redirect
 				margin-right: 153px
 				display: flex
@@ -270,20 +330,13 @@ p, a
 				&:before
 					content: ""
 					position: absolute
-					bottom: 21px
+					bottom: 29px
 					left: 0
 					right: 0
 					border-top: 1px solid #B7C7D1
-
-
 		.linkItems
 			display: flex
 			margin-left: 51px
-			margin-bottom: 65px
-			@media only screen and (max-width :  1600px)
-				margin:
-					right: 25px
-					left: 25px
 			.items
 				margin: 0 15px
 				> *
@@ -303,21 +356,12 @@ p, a
 							transform: scale(1.12)
 				span
 					font-size: 1rem
-					font-weight: 600
-	.indexPreviewHeader
-		display: flex
-		justify-content: space-between
-		align-items: center
-		width: auto
-		height: 62px
-		margin:
-			top: 64px
-			left: 66px
-			right: 195px
-		@media only screen and (max-width :  1600px)
-			margin:
-				right: 40px
-				left: 40px
+					font-family: $font-bold
+					@media only screen and (max-width : $xl)
+						font-size:  .8rem
+					@media only screen and (max-width : $sm)
+						font-size:  .6rem
+
 .bottomLine
 	display: flex
 	.leftLine
@@ -332,7 +376,7 @@ p, a
 
 
 
-
+@import "media" // Всегда в конце
 
 
 

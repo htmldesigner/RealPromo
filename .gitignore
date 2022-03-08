@@ -8,4 +8,4 @@
 /**/*.DS_Store
 /**/debug.log
 # Editor directories and files
-.idea
+/.idea/

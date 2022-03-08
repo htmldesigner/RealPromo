@@ -1,4 +1,4 @@
-<h1>ErgoSell</h1>
+<h1>RealPromo</h1>
 
 <h2>Gulp tasks:</h2>
 
