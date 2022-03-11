@@ -1,6 +1,6 @@
+@import "vars"
 @import "fonts"
 @import "libs"
-@import "vars"
 @import "./_mixins/_background-icon"
 
 *
@@ -75,8 +75,18 @@ p, a
 .h2
 	font-size: 3.8rem
 .h3
-	font-size: 2.8rem
-
+	font-size: 2.22rem
+	Line-height: 2.7rem
+	font-style: normal
+	font-family: $font-semibold
+	@media only screen and (max-width : 1190px)
+		font-size: 7.9vw
+	@media only screen and (max-width : $lg)
+		font-size: 5.9vw
+	@media only screen and (max-width : $md)
+		font-size: 5.9vw
+	@media only screen and (max-width : $sm)
+		font-size:  24px
 .h4
 	font-size: 1.9rem
 .h5
@@ -93,6 +103,10 @@ p, a
 ::selection
 	background-color: $accent
 	color: #fff
+
+
+.fullHeight
+	flex: 1 0 auto
 
 .btn
 	border: 2px solid $text
@@ -150,6 +164,9 @@ p, a
 	-webkit-transition: all .5s
 	-o-transition: all .5s
 	transition: all .5s
+	@media only screen and (max-width :  $lg)
+		width: 28px
+		margin: 3px 0
 .btnMnu.active .btnRow
 	background-color: #fff
 .btnMnu.active .btnRow
@@ -165,19 +182,17 @@ p, a
 		-o-transform: rotate(-225deg)
 		transform: rotate(-225deg)
 		top: -17px
+		@media only screen and (max-width :  $lg)
+			top: -6px
 	&:nth-child(2)
 		opacity: 0
 
+
 .callback
-	margin:
-		right: 20px
-		left: auto
 	a
 		display: flex
 		align-items: center
-		margin-right: 47px
-		@media only screen and (max-width :  1300px)
-			margin-right: 20px
+		text-decoration: none
 		span
 			margin-left: 18px
 			color: $text
@@ -185,10 +200,7 @@ p, a
 			font-size: 1rem
 			font-family: $default-font
 			font-weight: normal
-			@media only screen and (max-width :  1300px)
-				display: none
-.logo
-	margin-right: 40px
+
 
 .menu
 	position: absolute
@@ -226,14 +238,102 @@ p, a
 					color: #ACBCCD
 					transition: .25s ease
 					font-size: 1.22rem
+					text-decoration: none
 					&:hover
 						color: #fff
 						text-decoration: none
 
 
 .header
-	height: 46px
-	display: none
+	box-shadow: 0px 4px 10px rgba(13, 50, 73, 0.05)
+	//display: none
+	.navBar
+		margin: 0 15px
+		.navBarContainer
+			background: #fff
+			height: 82px
+			display: flex
+			align-items: center
+			max-width: 1530px
+			margin: 0 auto
+			.logo
+				img
+					height: 42px
+			.navBarMenu
+				margin-left: auto
+				ul
+					padding: 0
+					margin: 0
+					li
+						list-style: none
+						display: inline-block
+						margin: 0 1.14rem
+						@media only screen and (max-width :  1320px)
+							margin: 0 .6rem
+						&:last-child
+							margin-right: 0
+						a
+							line-height: 1.22rem
+							color: $text
+							font-weight: 400
+							transition: .25s ease
+							text-decoration: none
+							&:hover
+								text-decoration: none
+								color: $second-color
+							@media only screen and (max-width :  1320px)
+								font-size: 14px
+			.callback
+				margin-left: 69px
+				@media only screen and (max-width :  1320px)
+					margin-left: 30px
+				img
+					@media only screen and (max-width :  1320px)
+						height: 26px
+				span
+					margin-left: 14px
+					@media only screen and (max-width :  1320px)
+						font-size: 14px
+					@media only screen and (max-width :  $lg)
+						display: none
+			.btnMnu
+				display: none
+
+
+.breadcrumbs
+	margin-top: 47px
+	margin-bottom: 39px
+	ul
+		padding: 0
+		margin: 0
+		li
+			display: inline-block
+			list-style: none
+
+			a
+				text-decoration: none
+				color: #7F8B98
+				transition: .25s ease
+				&:hover
+					color: $text
+				&:after
+					content: ''
+					background: url('../img/arrow_small.svg')
+					display: inline-block
+					width: 9px
+					height: 9px
+					margin-left: 9px
+					margin-right: 7px
+			&:last-child
+				a
+					pointer-events: none
+					&:hover
+						color: #7F8B98
+					&:after
+						content: ''
+						background: none
+
+
 
 .indexPreview
 	display: flex
@@ -274,11 +374,25 @@ p, a
 				top: 59px
 				left: 66px
 				right: 195px
-				bottom: 10px
+				bottom: 3px
+			.logo
+				margin-right: 40px
+			.callback
+				margin:
+					right: 20px
+					left: auto
+				a
+					margin-right: 47px
+					@media only screen and (max-width :  1300px)
+						margin-right: 20px
+					span
+						@media only screen and (max-width :  1300px)
+							display: none
 		.rightSideTitle
 			position: relative
 			left: -99px
 			color: $text
+			top: 5px
 		.rightSideContent
 			display: flex
 			font-size: 1.1rem
@@ -287,7 +401,7 @@ p, a
 			margin-right: 195px
 			margin-bottom: 5px
 			.rightSideDescription
-				min-height: 85px
+				min-height: 90px
 				@media only screen and (max-width : $md)
 					font-size: 1.1rem
 					line-height: 1.4rem
@@ -331,7 +445,7 @@ p, a
 				&:before
 					content: ""
 					position: absolute
-					bottom: 29px
+					bottom: 20px
 					left: 0
 					right: 0
 					border-top: 1px solid #B7C7D1
@@ -363,6 +477,8 @@ p, a
 					@media only screen and (max-width : $sm)
 						font-size:  .6rem
 
+
+
 .bottomLine
 	display: flex
 	.leftLine
@@ -374,6 +490,93 @@ p, a
 		height: 7px
 		background: #E14E3D
 		flex-shrink: 2
+
+
+
+.footer
+	hr
+		background: $text
+		margin-bottom: 56px
+	.footerContent
+		margin: 0 15px 53px 15px
+		.footerContentWrapper
+			display: flex
+			justify-content: space-between
+			max-width: 1530px
+			margin: 0 auto
+			.footerPowered
+				flex-basis: 390px
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				span
+					margin-top: 11px
+					font-family: $font-semibold
+					color: $text
+					span
+						font-family: $default-font
+				.development
+					margin-bottom: 9px
+					.developmentContent
+						a
+							text-decoration: none
+							color: #3C6782
+							transition: .25s ease
+							&:hover
+								color: $text
+			.footerNav
+				flex-basis: 620px
+				padding-left: 27px
+				ul
+					display: flex
+					flex-direction: column
+					flex-wrap: wrap
+					height: 10em
+					padding: 0
+					margin: 0
+					li
+						list-style: none
+						margin: 9px 0
+						display: flex
+						&:last-child
+							margin-bottom: 0
+						&:nth-child(3)
+							margin-bottom: 0
+							flex-basis: 3em
+						//&:nth-child(n+4)
+						//	padding-left: 198px
+						a
+							text-decoration: none
+							color: $text
+							transition: .25s ease
+							&:hover
+								color: $second-color
+			.footerContacts
+				display: flex
+				justify-content: flex-end
+				.footerContactsWrapper
+					display: flex
+					flex-direction: column
+					padding-left: 66px
+					flex-basis: 520px
+					.phone
+						margin-top: 10px
+						a
+							text-decoration: none
+							color: $text
+							font-family: $font-semibold
+							font-size: 1.11rem
+					.address
+						margin-top: 13px
+	.bottomLine
+		.leftLine
+			width: 10.7%
+			background: #2C3C4D
+		.rightLine
+			width: 100%
+
+
+
 
 
 
