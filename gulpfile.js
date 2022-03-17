@@ -40,7 +40,9 @@ gulp.task('sass', function() {
 
 gulp.task('js', function() {
 	return gulp.src([
-		// 'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/magnific-popup/jquery.magnific-popup.js',
+		'app/libs/slick/slick.min.js',
 		'app/js/common.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))

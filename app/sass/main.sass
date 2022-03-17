@@ -1,7 +1,6 @@
 @import "vars"
 @import "fonts"
 @import "libs"
-@import "./_mixins/_background-icon"
 
 *
 	-webkit-box-sizing: border-box
@@ -29,6 +28,39 @@
 	color: #B7B7B7
 	opacity: 1
 
+
+//.my-mfp-zoom-in Animation
+.my-mfp-zoom-in
+	.portfolio-popup,
+	.form-callback
+		opacity: 0
+		transform: scale(0.95)
+	&.mfp-ready .portfolio-popup,
+	&.mfp-ready .form-callback
+		opacity: 1
+		transform: scale(1)
+	&.mfp-removing .portfolio-popup,
+	&.mfp-removing .form-callback
+		transform: scale(0.95)
+		opacity: 0
+	&.mfp-bg
+		opacity: 0
+		transition: opacity 0.3s ease-out
+	&.mfp-ready.mfp-bg
+		opacity: 0.6
+	&.mfp-removing.mfp-bg
+		opacity: 0
+*
+	transition: filter .25s ease
+.mfp-wrap ~ *
+	filter: blur(2px)
+
+//.my-mfp-zoom-in Animation END
+
+
+
+
+
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
 	color: #B7B7B7
@@ -54,9 +86,16 @@ body
 	margin: 0
 	color: $accent
 
-p, a
+a
 	margin: 0
 	padding: 0
+p
+	margin: 1rem 0
+	padding: 0
+	line-height: 1.4rem
+	@media only screen and (max-width : $sm)
+		font-size:  16px
+		line-height: 1.3rem
 
 .h1
 	font-size: 5.3rem
@@ -72,24 +111,37 @@ p, a
 		font-size: 5.9vw
 	@media only screen and (max-width : $sm)
 		font-size:  24px
-.h2
-	font-size: 3.8rem
-.h3
+h2
+	font-size: 3rem
+	Line-height: 3.11rem
+	font-style: normal
+	font-family: $font-bold
+	margin-bottom: 2rem
+	margin-top: 0.5rem
+	@media only screen and (max-width : 1190px)
+		font-size: 3.9vw
+		Line-height: 2.5rem
+	@media only screen and (max-width : $lg)
+		font-size: 3.1vw
+		Line-height: 2rem
+	@media only screen and (max-width : $md)
+		font-size:  24px
+		Line-height: 1.5rem
+h3
 	font-size: 2.22rem
 	Line-height: 2.7rem
 	font-style: normal
 	font-family: $font-semibold
-	@media only screen and (max-width : 1190px)
-		font-size: 7.9vw
-	@media only screen and (max-width : $lg)
-		font-size: 5.9vw
+	margin-bottom: 2rem
+	margin-top: 0.5rem
 	@media only screen and (max-width : $md)
-		font-size: 5.9vw
+		font-size: 5vw
 	@media only screen and (max-width : $sm)
 		font-size:  24px
-.h4
+		margin-bottom: .5rem
+h4
 	font-size: 1.9rem
-.h5
+h5
 	font-size: 0.9rem
 
 .img-responsive
@@ -302,7 +354,7 @@ p, a
 
 .breadcrumbs
 	margin-top: 47px
-	margin-bottom: 39px
+	margin-bottom: 30px
 	ul
 		padding: 0
 		margin: 0
@@ -332,7 +384,6 @@ p, a
 					&:after
 						content: ''
 						background: none
-
 
 
 .indexPreview
@@ -402,6 +453,8 @@ p, a
 			margin-bottom: 5px
 			.rightSideDescription
 				min-height: 90px
+				span
+					margin: 0
 				@media only screen and (max-width : $md)
 					font-size: 1.1rem
 					line-height: 1.4rem
@@ -412,7 +465,7 @@ p, a
 		.rightSideNavigation
 			position: relative
 			margin-left: 66px
-		.dvider
+		.divider
 			position: relative
 			display: flex
 			width: 100%
@@ -478,7 +531,6 @@ p, a
 						font-size:  .6rem
 
 
-
 .bottomLine
 	display: flex
 	.leftLine
@@ -492,8 +544,64 @@ p, a
 		flex-shrink: 2
 
 
+.hearerImage
+	position: relative
+	display: flex
+	img
+		max-height: 462px
+		object-fit: cover
+		width: 100%
+	.headerContent
+		width: 100%
+		z-index: 22
+		position: absolute
+		top: 35px
+		right: 0
+		bottom: 0
+		left: 0
+		display: flex
+		align-items: center
+		.headerTitle
+			color: #fff
+			padding-right: 65px
+		//.row
+		//	>
+		//		*
+		//			padding-left: 10px
+
+
+
+
+.contactsItems
+	margin-top: 3.22rem
+	display: flex
+	flex-direction: row
+	align-items: center
+	>
+		*
+			min-width: 285px
+			display: flex
+			align-items: center
+	img
+		margin-right: 22px
+	a
+		text-decoration: none
+		color: $text
+	.phoneItemWrapper
+		img
+			height: auto
+			width: 26px
+
+.contactsMap
+	margin-top: 46px
+	#map
+		height: 558px
+		width: 100%
+		background: #000
+		border-radius: 10px
 
 .footer
+	margin-top: 70px
 	hr
 		background: $text
 		margin-bottom: 56px
