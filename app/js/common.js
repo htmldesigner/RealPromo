@@ -66,8 +66,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    $('.realEstateItemImage').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        // autoplay: true,
+        autoplaySpeed: 2000,
+        // variableWidth: true,
+    });
 
-
+    $('.slick-dots li button').on('click', function(e){
+        e.preventDefault(); // use this
+    });
 
 
 });
