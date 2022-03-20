@@ -56,8 +56,17 @@
         width: 18px
   .contactsMap
     margin-top: 38px
-
-
+  .effectiveService
+    .effectiveServiceItem
+      padding: 20px 20px 10px 20px
+      &.asColumn
+        //min-height: auto
+      &.asRow
+        flex-direction: column
+        .asRowContent
+          margin: 0
+  .monitoringsStages
+    height: 250px
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px)
   .header
@@ -138,8 +147,56 @@
         img
           width: 100%
           height: 100%
-
-
+  .realEstateItemsSection
+    padding-bottom: 18px
+  .effectiveService
+    padding-top: 24px
+    padding-bottom: 14px
+    h3
+      margin-bottom: 24px
+    .effectiveServiceItem
+      &.asColumn
+        min-height: auto
+  .weOfferSection
+    padding-top: 24px
+    padding-bottom: 42px
+    .weOffer
+      overflow: hidden
+      .offerItems
+        margin: 5px -15px 0 -15px
+        .offerItem
+          span
+            margin-top: 12px
+            font-size: 16px
+  .transitionHomeSection
+    padding-bottom: 32px
+    .transitionHome
+      padding-top: 130px
+      .transitionHomeImage
+        margin-bottom: 10px
+      .transitionHomeContentWrap
+        display: flex
+        flex-direction: column
+        height: 100%
+        justify-content: center
+  .whyUsSection
+    .whyUs
+      padding-top: 20px
+      padding-bottom: 0
+      h2
+        margin-bottom: 28px
+        font-family: $font-semibold
+      .whyUsItems
+        margin: 0px -15px 0 -15px
+  .vendorsItemsSection
+    margin-top: 20px
+    .vendorsItems
+      .vendorsItem
+        margin-left: 5px
+        margin-right: 5px
+        margin-bottom: 10px
+  .footer
+    margin-top: 30px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px)
@@ -153,11 +210,22 @@
         li
           margin-top: 40px
           margin-bottom: 40px
-
+  .monitoringsStages
+    padding-top: 30px
+    height: 130px
+  .transitionHomeSection
+    padding-bottom: 32px
+    .transitionHome
+      padding-top: 120px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px)
-/**/
+  .monitoringsStages
+    padding-top: 30px
+    height: 60px
+  .transitionHomeSection
+    .transitionHome
+      padding-top: 150px
 
 
 /* Custom, iPhone Retina */

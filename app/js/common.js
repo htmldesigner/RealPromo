@@ -33,8 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
-
-
     // $('.test-popup-link').magnificPopup({
     //     type: 'image',
     //     // closeOnContentClick: true,
@@ -72,14 +70,110 @@ document.addEventListener('DOMContentLoaded', () => {
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1,
+        arrows: false,
         // autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 4000,
         // variableWidth: true,
     });
 
-    $('.slick-dots li button').on('click', function(e){
+    $('.slick-dots li button').on('click', function (e) {
         e.preventDefault(); // use this
     });
+
+
+    $('.offerItems').slick({
+        arrows: false,
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2
+                }
+            },
+
+            {
+                breakpoint: 920,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    variableWidth: true,
+                }
+            }
+        ]
+    });
+
+
+    $('.whyUsItems').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2
+                }
+            },
+
+            {
+                breakpoint: 920,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+
+
+
+        //do something
+
+        let width = $(document).width();
+        if (width < 992) {
+            $('.vendorsItems .row').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                // autoplay: true,
+                autoplaySpeed: 4000,
+                arrows: false,
+                // variableWidth: true,
+            });
+        }
+
+
+
+
 
 
 });

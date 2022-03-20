@@ -97,6 +97,24 @@ p
 		font-size:  16px
 		line-height: 1.3rem
 
+.content
+	ul
+		list-style-type: none
+		li
+			text-indent: -.9em
+			line-height: 1.3rem
+			margin: 14px 0
+			&:before
+				background-color: $second-color
+				border-radius: 50%
+				content: ""
+				display: inline-block
+				margin-right: 10px
+				margin-bottom: 2px
+				height: 7px
+				width: 7px
+
+
 .h1
 	font-size: 5.3rem
 	Line-height: 1
@@ -136,11 +154,25 @@ h3
 	margin-top: 0.5rem
 	@media only screen and (max-width : $md)
 		font-size: 5vw
+		margin-bottom: 1.3rem
+		Line-height: 2.1rem
+		margin-top: 0.1rem
 	@media only screen and (max-width : $sm)
 		font-size:  24px
-		margin-bottom: .5rem
+		margin-bottom: 1.3rem
+		Line-height: 1.63rem
+		margin-top: 0.5rem
 h4
-	font-size: 1.9rem
+	font-size: 1.66rem
+	font-style: normal
+	font-family: $font-semibold
+	margin-bottom: 2rem
+	margin-top: 1rem
+	@media only screen and (max-width : $sm)
+		font-size:  24px
+		margin-bottom: 1.3rem
+		Line-height: 1.63rem
+		margin-top: 0.5rem
 h5
 	font-size: 1.22rem
 	font-family: $font-bold
@@ -254,7 +286,6 @@ h5
 			font-size: 1rem
 			font-family: $default-font
 			font-weight: normal
-
 
 .menu
 	position: absolute
@@ -545,7 +576,6 @@ h5
 		background: #E14E3D
 		flex-shrink: 2
 
-
 .hearerImage
 	position: relative
 	display: flex
@@ -567,18 +597,19 @@ h5
 			color: #fff
 			padding-right: 65px
 
-
-
-
 .slick-track
 	.slick-slide
 		overflow: hidden
 
+.bg-color
+	background-color: #F7F9FA
 
 //Real estate START
 .slick-dotted.slick-slider
 	margin-bottom: 0
 	box-sizing: border-box
+.realEstateItemsSection
+	padding-bottom: 70px
 .realEstateItem
 	.realEstateItemImage
 		position: relative
@@ -588,6 +619,8 @@ h5
 			transition: .25s ease
 			li
 				margin: 0 8px
+				&:before
+					background-color: transparent
 				button
 					width: 12px
 					height: 12px
@@ -602,12 +635,6 @@ h5
 					button
 						background-color: #fff
 
-.bg-color
-	background-color: #F7F9FA
-
-.realEstateItemsSection
-	padding-bottom: 70px
-	border-bottom: 20px
 .realEstateItems
 	a
 		text-decoration: none
@@ -655,10 +682,9 @@ h5
 				span
 					color: $second-color
 
-//Real estate END
-
 .effectiveService
 	padding-top: 56px
+	padding-bottom: 72px
 	h3
 		margin-bottom: 60px
 	.effectiveServiceItem
@@ -666,16 +692,19 @@ h5
 		border-radius: 10px
 		display: flex
 		margin-bottom: 30px
-		padding: 40px 40px 0px 40px
+		padding: 40px 70px 0px 40px
 		img
 			width: 149px
-			height: auto
+			min-height: 117px
 			margin-bottom: 36px
 		.effectiveServiceContent
 			p
 				font-size: .9rem
+				line-height: 1.3rem
 			ul
 				padding-left: 1rem
+				li
+					font-size: .9rem
 
 		&.asColumn
 			min-height: 100%
@@ -684,6 +713,95 @@ h5
 			display: flex
 			.asRowContent
 				margin-left: 38px
+
+.weOfferSection
+	padding-top: 56px
+	padding-bottom: 72px
+	.weOffer
+		overflow: hidden
+		.offerItems
+			margin: 10px -15px 0 -15px
+			.offerItem
+				display: flex
+				flex-direction: column
+				margin: 0 15px
+				.offerItemImage
+
+					border-radius: 10px
+					overflow: hidden
+					img
+						width: 100%
+						height: 210px
+						object-fit: cover
+				span
+					margin-top: 20px
+					color: $text
+					font-family: $font-semibold
+					font-size: 1rem
+					line-height: 1.3rem
+
+.monitoringsStages
+	position: relative
+	height: 370px
+	padding-top: 80px
+
+.transitionHomeSection
+	padding-bottom: 80px
+	.transitionHome
+		padding-top: 24%
+		.transitionHomeImage
+			display: flex
+			width: 100%
+			justify-content: center
+		.transitionHomeContentWrap
+			display: flex
+			flex-direction: column
+			height: 100%
+			justify-content: center
+
+
+.whyUsSection
+	.whyUs
+		padding-top: 60px
+		padding-bottom: 20px
+		h2
+			font-family: $font-semibold
+		.whyUsItems
+			margin: 20px -15px 0 -15px
+			.whyUsItem
+				margin: 0 15px
+				.whyUsItemImage
+					display: flex
+					height: 87px
+//Real estate END
+
+//IT Solutions START
+.vendorsItemsSection
+	.vendorsItems
+		//display: flex
+		//flex-direction: row
+		//justify-content: flex-start
+		//margin: 0 -15px
+		//flex-wrap: wrap
+		.vendorsItem
+			margin-bottom: 50px
+			//margin-left: 5px
+			//margin-right: 5px
+			//flex-basis: auto
+			//
+			//padding: 40px
+			background-color: rgba(196, 196, 196, .2)
+			display: flex
+			align-items: center
+			justify-content: center
+			height: 188px
+			////&:last-child
+			////	background-color: red
+
+
+
+//IT Solutions END
+
 
 
 // Contacts page START
