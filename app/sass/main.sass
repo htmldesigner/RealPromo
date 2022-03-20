@@ -191,7 +191,7 @@ h5
 	color: #fff
 
 
-.fullHeight
+.main_wrapper
 	flex: 1 0 auto
 
 .btn
@@ -291,7 +291,7 @@ h5
 	position: absolute
 	justify-content: space-between
 	width: 100%
-	z-index: 10
+	z-index: 50
 	display: none
 	&.active
 		display: flex
@@ -328,10 +328,15 @@ h5
 						color: #fff
 						text-decoration: none
 
-
+.main_wrapper
+	margin-top: 82px
 .header
 	box-shadow: 0px 4px 10px rgba(13, 50, 73, 0.05)
-	//display: none
+	width: 100%
+	position: fixed
+	z-index: 40
+	top: 0
+	background-color: #fff
 	.navBar
 		margin: 0 15px
 		.navBarContainer
@@ -759,8 +764,8 @@ h5
 			height: 100%
 			justify-content: center
 
-
 .whyUsSection
+	overflow: hidden
 	.whyUs
 		padding-top: 60px
 		padding-bottom: 20px
@@ -774,6 +779,46 @@ h5
 					display: flex
 					height: 87px
 //Real estate END
+
+//RealEstate Single page START
+.realEstateBigPreview
+	width: 100%
+	max-height: 647px!important
+	border-radius: 10px
+	overflow: hidden
+	img
+		object-fit: cover
+		height: 100%
+		width: 100%
+.realEstatePreviewList
+	margin-top: 30px
+	margin-bottom: 60px
+	.previewItem
+		border: 2px solid transparent
+		margin: 0 20px
+		cursor: pointer
+		border-radius: 10px
+		overflow: hidden
+		max-width: 158px!important
+		height: 101px
+		img
+			object-fit: cover
+			height: 100%
+			width: 100%
+		&:first-child, &:last-child
+			margin:	0
+		&.slick-current
+			border: 2px solid $second-color
+	.slick-list
+		padding: 0!important
+		.slick-track
+			margin: 0
+
+
+//RealEstate Single page END
+
+
+
 
 //IT Solutions START
 .vendorsItemsSection
@@ -795,14 +840,7 @@ h5
 			align-items: center
 			justify-content: center
 			height: 188px
-			////&:last-child
-			////	background-color: red
-
-
-
 //IT Solutions END
-
-
 
 // Contacts page START
 .contactsItems

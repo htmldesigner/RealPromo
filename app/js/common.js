@@ -4,12 +4,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const menu = document.querySelector('.menu')
     const menuOverlay = document.querySelector('.menuOverlay')
     const menuContainer = document.querySelector('.menuContainer')
+    const header = document.querySelector('.header')
+    const main_wrapper = document.querySelector('.main_wrapper')
 
     btnMnu.addEventListener('click', (event) => {
         btnMnu.classList.toggle('active')
 
         if (btnMnu.classList.contains('active')) {
             menu.classList.add('active')
+
+            if (header) {
+                header.style.position = "static"
+                main_wrapper.style.marginTop = 0
+            }
+
+            window.scrollTo({
+                top: 0,
+                behavior: "instant"
+            });
+
             setTimeout(() => {
                 menuContainer.classList.toggle('isActive')
                 menuOverlay.classList.toggle('isActive')
@@ -17,6 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             menuContainer.classList.remove('isActive')
             menuOverlay.classList.remove('isActive')
+
+            if (header) {
+                header.style.position = "fixed"
+                main_wrapper.style.marginTop = "46px"
+            }
+
             setTimeout(() => {
                 menu.classList.remove('active')
             }, 500)
@@ -153,27 +172,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-
-        //do something
-
-        let width = $(document).width();
-        if (width < 992) {
-            $('.vendorsItems .row').slick({
-                dots: false,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                // autoplay: true,
-                autoplaySpeed: 4000,
-                arrows: false,
-                // variableWidth: true,
-            });
-        }
+    let width = $(document).width();
+    if (width < 992) {
+        $('.vendorsItems .row').slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            // autoplay: true,
+            autoplaySpeed: 4000,
+            arrows: false,
+            // variableWidth: true,
+        });
+    }
 
 
-
-
+    $('.realEstateBigPreview').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.realEstatePreviewList'
+    });
+    $('.realEstatePreviewList').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.realEstateBigPreview',
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true
+    });
 
 
 });
